@@ -78,7 +78,7 @@ class CadastroController extends Controller
             "age" => $request->age,
             "telefone" => $request->telefone,
         ]);
-        $registro->update($request->all());
+       
         return redirect()->route('cadastro.index');
     }
 
