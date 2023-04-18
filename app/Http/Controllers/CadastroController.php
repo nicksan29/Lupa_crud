@@ -29,15 +29,13 @@ class CadastroController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     "id" => "string|required",
-        //     "name" => "string|required",
-        //     "email" => "string|required",
-        //     "cpf" => "string|required",
-        //     "age" => "string|required",
-        //     "telefone" => "string|required",
-        // ]);
-
+        $request->validate([
+            "name" => "string|required",
+            "email" => "string|required",
+            "cpf" => "string|required",
+            "age" => "string|required",
+            "telefone" => "string|required",
+        ]);
         $registros= Cad::create([
             "name" => $request->name,
             "email" => $request->email,
