@@ -13,7 +13,7 @@ class CadastroController extends Controller
      */
     public function index(){
         $registros = Cad::all();
-        return view('cad-index', compact('registros'));
+        return view('cad.index', compact('registros'));
     }
 
     /**
@@ -21,7 +21,7 @@ class CadastroController extends Controller
      */
     public function create()
     {
-        return view('cad-create');
+        return view('cad.create');
     }
 
     /**
@@ -51,10 +51,10 @@ class CadastroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        $registro = Cad::find($id)->first();
-        return view('cad-edit', compact('registro'));
+    public function edit($id){
+        $registro = Cad::find($id);
+
+        return view('cad.edit', compact('registro'));
     }
 
     /**
